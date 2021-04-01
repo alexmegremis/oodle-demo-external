@@ -5,6 +5,7 @@ import lombok.*;
 @Data
 @AllArgsConstructor
 @Builder
+@ToString
 public class MessageDTO {
     final Integer id;
     final String message;
