@@ -6,18 +6,18 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(value = "Internal-API", decode404 = true)
-@RequestMapping(value = "/api/v1")
+@FeignClient(value = "Internal-API")
+@RequestMapping("/api/v1/message")
 public interface MessagesInternalClient {
-    @GetMapping("/message")
+    @GetMapping()
     List<MessageDTO> getAll();
 
-    @GetMapping("/message/{id}")
+    @GetMapping("{id}")
     MessageDTO get(@PathVariable("id") final Integer id);
 
-    @PostMapping("/message")
+    @PostMapping()
     Integer save(@RequestBody final String message);
 
-    @DeleteMapping (value = "/message/{id}")
+    @DeleteMapping ("{id}")
     void delete(@PathVariable (name = "id") final Integer id);
 }

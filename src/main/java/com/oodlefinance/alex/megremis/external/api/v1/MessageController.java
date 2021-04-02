@@ -2,10 +2,9 @@ package com.oodlefinance.alex.megremis.external.api.v1;
 
 import com.oodlefinance.alex.megremis.external.MessagesInternalClient;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.*;
+import java.util.List;
 
 @RestController
 @RequestMapping ("/api/v2/message")
@@ -23,11 +22,11 @@ public class MessageController {
     public Integer save(@RequestBody final String message) {
         return client.save(message);
     }
-//
-//    @GetMapping()
-//    public List<MessageDTO> getAllMessages() {
-//        return client.getAll();
-//    }
+
+    @GetMapping()
+    public List<MessageDTO> getAllMessages() {
+        return client.getAll();
+    }
 //
 //    @GetMapping (value = "{id}")
 //    @ResponseBody

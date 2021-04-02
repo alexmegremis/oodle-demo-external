@@ -8,3 +8,9 @@ spring:
       discovery:
         service-name: External API
         instance-id: ${spring.application.name}:${spring.cloud.consul.discovery.service-name}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+debug: true
